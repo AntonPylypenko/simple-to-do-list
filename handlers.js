@@ -29,12 +29,10 @@ function createCheckbox(id){
     check.setAttribute('type', 'checkbox');
     check.setAttribute('id', `box-${id}`);
     check.setAttribute('onclick', 'completeTask(id)');
-    //check.addEventListener('change', completeTask(id)) ???
 
     return check;
 }
 
-//часто зустрічаю, що назва створюваного елементу пишеться з великої, то така конвенція ?
 function createDeleteButton(id){
     let btn = document.createElement('button');
     btn.innerHTML= "Delete";
@@ -49,8 +47,8 @@ function deleteTask(id){
     elem.parentElement.remove();
 }
 
-//спитай чому те ід знаходиться тільки для чексбокса
 function completeTask(id){
+    console.log("ID: " + id)
     let elem = document.getElementById(id);
     if (elem.checked) {       
         elem.parentElement.setAttribute('class', 'checked')
